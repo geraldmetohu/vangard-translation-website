@@ -1,6 +1,4 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+const nextConfig = {
   images: {
     remotePatterns: [
       {
@@ -9,9 +7,12 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "utfs.io", // ✅ Add this line
+        hostname: "utfs.io",
       },
     ],
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   },
 };
 

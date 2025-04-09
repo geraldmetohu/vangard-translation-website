@@ -71,7 +71,7 @@ export default function IndexPage() {
           },
         }}
         viewport={{ once: true }}
-        className="w-full  py-12 bg-[#f4f4f4] rounded-xl max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="w-full  py-12 bg-[#f4f4f4] rounded-xl max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 "
       >
         <h2 className="text-5xl font-semibold text-center mb-24 text-[#0D47A1]">
           Our Core Services
