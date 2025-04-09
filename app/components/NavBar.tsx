@@ -19,12 +19,10 @@ export async function NavBar() {
 
         {/* Right Side */}
         <div className="flex items-center space-x-4">
-          <Button
-            asChild
-            className="bg-[#e7d240] text-[#0D47A1] hover:bg-[#ffd738] rounded-xl px-5 py-2 font-semibold transition"
-          >
-            <Link href="/quote">Request a Quote</Link>
-          </Button>
+        <Button asChild className="bg-[#e7d240] text-[#0D47A1] hover:bg-[#ffd738] rounded-xl px-5 py-2 font-semibold transition">
+          <Link href="/quote">Request a Quote</Link>
+        </Button>
+
         </div>
       </div>
     </nav>
