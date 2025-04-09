@@ -14,13 +14,13 @@ export default function IndexPage() {
         transition={{ duration: 0.8 }}
         className="relative w-full px-0 py-40 md:py-56 overflow-hidden min-h-[600px]"
       >
-        <Image
-          src="/translation.jpg"
-          alt="Translation Background"
-          layout="fill"
-          objectFit="cover"
-          className="absolute inset-0 z-0"
-        />
+      <Image
+        src="/translation.jpg"
+        alt="Translation Background"
+        fill
+        className="absolute inset-0 z-0 object-cover"
+      />
+
         <div className="absolute inset-0 bg-black/40 z-10" />
 
         <div className="relative z-20 text-center max-w-3xl mx-auto px-6">
