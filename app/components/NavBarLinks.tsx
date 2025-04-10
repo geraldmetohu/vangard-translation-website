@@ -22,8 +22,12 @@ export function NavbarLinks({
   };
 
   const linkStyle = isMobile
-    ? "block py-2 text-[#e7d240] hover:text-[#ffd738]"
-    : "group px-3 py-2 font-medium text-sm rounded-md transition text-[#e7d240] hover:text-[#ffd738] hover:bg-[#29186b]/70";
+    ? "block py-2 text-[#F4CE14] hover:text-[#FFF455]"
+    : "group px-3 py-2 font-medium text-sm rounded-md transition text-[#F4CE14] hover:text-[#FFF455] hover:bg-[#024CAA]/70";
+
+  const dropdownContainerStyle = isMobile
+    ? "pl-4 space-y-2"
+    : "absolute bg-[#000957] mt-2 p-2 rounded shadow space-y-2 z-50";
 
   return (
     <div className={`${isMobile ? "space-y-2" : "hidden md:flex items-center gap-x-4 ml-8"}`}>
@@ -36,14 +40,14 @@ export function NavbarLinks({
           key={link.name}
           href={link.href}
           onClick={() => handleClick()}
-          className={`${linkStyle} ${pathname === link.href ? "bg-[#29186b] text-[#ffd738]" : ""}`}
+          className={`${linkStyle} ${pathname === link.href ? "bg-[#024CAA] text-[#FFF455]" : ""}`}
         >
           {link.name}
         </Link>
       ))}
 
       {/* Services */}
-      <div>
+      <div className="relative">
         <button
           onClick={() => setServicesOpen(!servicesOpen)}
           className={`${linkStyle} flex items-center gap-1 w-full`}
@@ -51,7 +55,7 @@ export function NavbarLinks({
           Services {servicesOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         </button>
         {servicesOpen && (
-          <div className={`${isMobile ? "pl-4" : "absolute bg-[#0D47A1] mt-2 p-2 rounded shadow"} space-y-2`}>
+          <div className={dropdownContainerStyle}>
             {[
               { name: "Translating", href: "/services/translating" },
               { name: "Interpreting", href: "/services/interpreting" },
@@ -61,7 +65,7 @@ export function NavbarLinks({
               <Link
                 key={item.name}
                 href={item.href}
-                onClick={() => handleClick()}
+                onClick={() => handleClick(() => setServicesOpen(false))}
                 className={linkStyle}
               >
                 {item.name}
@@ -72,7 +76,7 @@ export function NavbarLinks({
       </div>
 
       {/* Industries */}
-      <div>
+      <div className="relative">
         <button
           onClick={() => setIndustriesOpen(!industriesOpen)}
           className={`${linkStyle} flex items-center gap-1 w-full`}
@@ -80,7 +84,7 @@ export function NavbarLinks({
           Industries {industriesOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         </button>
         {industriesOpen && (
-          <div className={`${isMobile ? "pl-4" : "absolute bg-[#0D47A1] mt-2 p-2 rounded shadow"} space-y-2`}>
+          <div className={dropdownContainerStyle}>
             {[
               { name: "Medical", href: "/industries/medical" },
               { name: "Law", href: "/industries/law" },
@@ -93,7 +97,7 @@ export function NavbarLinks({
               <Link
                 key={item.name}
                 href={item.href}
-                onClick={() => handleClick()}
+                onClick={() => handleClick(() => setIndustriesOpen(false))}
                 className={linkStyle}
               >
                 {item.name}

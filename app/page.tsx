@@ -23,10 +23,10 @@ export default function IndexPage() {
         <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="relative z-20 text-center max-w-3xl mx-auto px-6">
           <h1
-            className="text-4xl lg:text-5xl font-extrabold tracking-tight text-blue-900"
+            className="text-4xl lg:text-5xl font-extrabold tracking-tight"
             style={{
-              WebkitTextStroke: "2px #ebbe08",
-              WebkitTextFillColor: "#2a097e",
+              WebkitTextStroke: "2px #F4CE14",
+              WebkitTextFillColor: "#000957",
             }}
           >
             Accurate. Reliable. Global.
@@ -34,8 +34,8 @@ export default function IndexPage() {
           <p
             className="mt-6 text-xl lg:text-2xl leading-relaxed font-medium"
             style={{
-              WebkitTextStroke: "0.3px #fde9e9",
-              WebkitTextFillColor: "#ebbe08",
+              WebkitTextStroke: "0.3px #fff",
+              WebkitTextFillColor: "#F4CE14",
             }}
           >
             Vangard Translation delivers expert multilingual communication services tailored to meet the needs of your global audience.
@@ -43,7 +43,7 @@ export default function IndexPage() {
           <div className="mt-12 flex justify-center gap-4">
             <a
               href="/quote"
-              className="inline-block bg-[#0D47A1] text-[#e7d240] px-6 py-3 rounded-xl text-md font-semibold hover:bg-[#29186b] hover:text-[#ffd738] transition"
+              className="inline-block bg-[#000957] text-[#F4CE14] px-6 py-3 rounded-xl text-md font-semibold hover:bg-[#024CAA] hover:text-[#FFF455] transition"
             >
               Request a Quote
             </a>
@@ -52,11 +52,9 @@ export default function IndexPage() {
       </motion.section>
 
       {/* Divider */}
-      <div className="w-full h-16 bg-gradient-to-r from-[#0D47A1] via-[#e7d240] to-[#0D47A1] opacity-20" />
+      <div className="w-full h-16 bg-gradient-to-r from-[#000957] via-[#F4CE14] to-[#000957] opacity-20" />
 
-      {/* Padded Container for other sections */}
       <div className="px-4 sm:px-6 lg:px-12">
-
         {/* Services Overview */}
         <motion.section
           initial="hidden"
@@ -68,7 +66,7 @@ export default function IndexPage() {
           viewport={{ once: true }}
           className="w-full py-12 bg-[#f4f4f4] rounded-xl max-w-7xl mx-auto"
         >
-          <h2 className="text-5xl font-semibold text-center mb-24 text-[#0D47A1]">
+          <h2 className="text-5xl font-semibold text-center mb-24 text-[#000957]">
             Our Core Services
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center">
@@ -97,7 +95,7 @@ export default function IndexPage() {
                     height={160}
                     className="mb-6 rounded-lg object-cover"
                   />
-                  <h3 className="text-2xl font-semibold mb-3 group-hover:font-bold text-[#0D47A1] transition-all">
+                  <h3 className="text-2xl font-semibold mb-3 group-hover:font-bold text-[#000957] transition-all">
                     {title}
                   </h3>
                   <p className="text-gray-700 text-base group-hover:font-medium transition-all px-4">
@@ -110,7 +108,7 @@ export default function IndexPage() {
           <div className="mt-16 flex justify-center">
             <a
               href="/services"
-              className="inline-block bg-[#0D47A1] text-[#e7d240] px-6 py-3 rounded-xl text-md font-semibold hover:bg-[#29186b] hover:text-[#ffd738] transition"
+              className="inline-block bg-[#000957] text-[#F4CE14] px-6 py-3 rounded-xl text-md font-semibold hover:bg-[#024CAA] hover:text-[#FFF455] transition"
             >
               Discover All Services
             </a>
@@ -118,7 +116,7 @@ export default function IndexPage() {
         </motion.section>
 
         {/* Divider */}
-        <div className="w-full h-16 bg-gradient-to-r from-[#e7d240] via-[#0D47A1] to-[#e7d240] opacity-20" />
+        <div className="w-full h-16 bg-gradient-to-r from-[#F4CE14] via-[#000957] to-[#F4CE14] opacity-20" />
 
         {/* Why Choose Us */}
         <motion.section
@@ -131,7 +129,7 @@ export default function IndexPage() {
           viewport={{ once: true }}
           className="bg-[#f4f4f4] w-full px-6 py-12 rounded-xl"
         >
-          <h2 className="text-4xl font-semibold text-center mb-16 text-[#0d47a1]">
+          <h2 className="text-4xl font-semibold text-center mb-16 text-[#000957]">
             Why Choose Vangard?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto text-center">
@@ -139,22 +137,22 @@ export default function IndexPage() {
               {
                 title: "Expert Linguists",
                 desc: "Certified native translators with industry-specific expertise.",
-                icon: <Languages size={56} className="mx-auto text-[#0D47A1] group-hover:text-[#e7d240] transition" />,
+                icon: <Languages size={56} className="mx-auto text-[#000957] group-hover:text-[#F4CE14] transition" />,
               },
               {
                 title: "Fast Turnaround",
                 desc: "We meet tight deadlines without compromising on quality.",
-                icon: <Zap size={56} className="mx-auto text-[#0D47A1] group-hover:text-[#e7d240] transition" />,
+                icon: <Zap size={56} className="mx-auto text-[#000957] group-hover:text-[#F4CE14] transition" />,
               },
               {
                 title: "Confidential & Secure",
                 desc: "We treat your documents with strict confidentiality and care.",
-                icon: <ShieldHalf size={56} className="mx-auto text-[#0D47A1] group-hover:text-[#e7d240] transition" />,
+                icon: <ShieldHalf size={56} className="mx-auto text-[#000957] group-hover:text-[#F4CE14] transition" />,
               },
               {
                 title: "Global Industry Coverage",
                 desc: "From law to medical to tech, we understand your sector.",
-                icon: <Globe size={56} className="mx-auto text-[#0D47A1] group-hover:text-[#e7d240] transition" />,
+                icon: <Globe size={56} className="mx-auto text-[#000957] group-hover:text-[#F4CE14] transition" />,
               },
             ].map((item, index) => (
               <motion.div
@@ -165,8 +163,8 @@ export default function IndexPage() {
                 viewport={{ once: true }}
                 className="group p-8 bg-white hover:bg-[#ece9e9] border border-[#d3d3d3] rounded-2xl shadow-md hover:shadow-xl transition-all duration-300"
               >
-                <div className="mb-5 transition">{item.icon}</div>
-                <h4 className="text-xl font-semibold mb-2 text-[#0D47A1] group-hover:text-[#e7d240] transition">
+                <div className="mb-5">{item.icon}</div>
+                <h4 className="text-xl font-semibold mb-2 text-[#000957] group-hover:text-[#F4CE14] transition">
                   {item.title}
                 </h4>
                 <p className="text-gray-600 text-base group-hover:font-medium transition">
@@ -178,7 +176,7 @@ export default function IndexPage() {
           <div className="mt-16 flex justify-center">
             <a
               href="/contact"
-              className="inline-block bg-[#0D47A1] text-[#e7d240] px-6 py-3 rounded-xl text-md font-semibold hover:bg-[#29186b] hover:text-[#ffd738] transition-all shadow-xl duration-300"
+              className="inline-block bg-[#000957] text-[#F4CE14] px-6 py-3 rounded-xl text-md font-semibold hover:bg-[#024CAA] hover:text-[#FFF455] transition-all shadow-xl duration-300"
             >
               Contact Us
             </a>
@@ -186,7 +184,7 @@ export default function IndexPage() {
         </motion.section>
 
         {/* Final Divider */}
-        <div className="w-full h-16 bg-gradient-to-r from-[#e7d240] via-[#0D47A1] to-[#e7d240] opacity-20 mt-12" />
+        <div className="w-full h-16 bg-gradient-to-r from-[#F4CE14] via-[#000957] to-[#F4CE14] opacity-20 mt-12" />
       </div>
     </div>
   );

@@ -52,69 +52,81 @@ export default function ContactPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="max-w-6xl mx-auto py-20 px-6 text-[#0D47A1]"
+      className="max-w-6xl mx-auto py-24 px-6 text-[#000957] mt-24"
     >
-      <h1 className="text-4xl font-bold text-center mb-6 text-[#e7d240]">Contact Us</h1>
+      <h1 className="text-4xl font-bold text-center mb-6 text-[#F4CE14]">Contact Us</h1>
       <p className="text-center max-w-2xl mx-auto mb-12">
         Have questions, a project to discuss, or just want to say hello? Fill out the form and our team will be in touch shortly.
       </p>
 
       <motion.form
         onSubmit={handleSubmit}
-        className="grid grid-cols-1 gap-6 bg-white p-8 rounded-xl shadow-md border border-[#e7d240]"
+        className="grid grid-cols-1 gap-6 bg-white p-8 rounded-xl shadow-md border border-[#F4CE14]"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
         <div>
-          <label className="block text-sm font-medium mb-1">Full Name</label>
+          <label htmlFor="name" className="block text-sm font-medium mb-1">
+            Full Name
+          </label>
           <input
+            id="name"
             type="text"
             name="name"
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-[#0D47A1]"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-[#000957]"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1">Email</label>
+          <label htmlFor="email" className="block text-sm font-medium mb-1">
+            Email
+          </label>
           <input
+            id="email"
             type="email"
             name="email"
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-[#0D47A1]"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-[#000957]"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1">Phone Number</label>
+          <label htmlFor="phone" className="block text-sm font-medium mb-1">
+            Phone Number
+          </label>
           <input
+            id="phone"
             type="text"
             name="phone"
             required
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-[#0D47A1]"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-[#000957]"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1">Message</label>
+          <label htmlFor="message" className="block text-sm font-medium mb-1">
+            Message
+          </label>
           <textarea
+            id="message"
             name="message"
             rows={5}
             required
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-[#0D47A1]"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-[#000957]"
           />
         </div>
         <button
           type="submit"
           disabled={status === "loading"}
-          className="bg-[#0D47A1] text-[#e7d240] py-2 rounded-lg font-semibold hover:bg-[#29186b] hover:text-[#ffd738] transition"
+          className="bg-[#000957] text-[#F4CE14] py-2 rounded-lg font-semibold hover:bg-[#024CAA] hover:text-[#FFF455] transition"
         >
           {status === "loading" ? "Sending..." : "Send Message"}
         </button>
@@ -134,16 +146,16 @@ export default function ContactPage() {
         viewport={{ once: true }}
       >
         <div className="flex flex-col items-center">
-          <Mail className="mb-2" />
-          <p className="font-medium">info@vangardtranslation.com</p>
+          <Mail className="mb-2 text-[#000957]" />
+          <p className="font-medium">info@vangardtranslations.com</p>
         </div>
         <div className="flex flex-col items-center">
-          <Phone className="mb-2" />
-          <p className="font-medium">+44 123 456 789</p>
+          <Phone className="mb-2 text-[#000957]" />
+          <p className="font-medium">+44 7777 277 507</p>
         </div>
         <div className="flex flex-col items-center">
-          <MapPin className="mb-2" />
-          <p className="font-medium">London, United Kingdom</p>
+          <MapPin className="mb-2 text-[#000957]" />
+          <p className="font-medium">Oakleigh Rd S, North London Business Park, N11 1GN</p>
         </div>
       </motion.div>
 
@@ -164,20 +176,24 @@ export default function ContactPage() {
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-2xl font-semibold text-[#0D47A1] mb-4">See Our Socials</h2>
+        <h2 className="text-2xl font-semibold text-[#000957] mb-4">See Our Socials</h2>
         <div className="flex justify-center gap-6">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#e7d240] transition text-[#0D47A1]">
-            <Facebook className="w-6 h-6" />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#e7d240] transition text-[#0D47A1]">
-            <Twitter className="w-6 h-6" />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#e7d240] transition text-[#0D47A1]">
-            <Instagram className="w-6 h-6" />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#e7d240] transition text-[#0D47A1]">
-            <Linkedin className="w-6 h-6" />
-          </a>
+          {[
+            { icon: Facebook, href: "https://facebook.com" },
+            { icon: Twitter, href: "https://twitter.com" },
+            { icon: Instagram, href: "https://instagram.com" },
+            { icon: Linkedin, href: "https://linkedin.com" },
+          ].map(({ icon: Icon, href }) => (
+            <a
+              key={href}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#F4CE14] transition text-[#000957]"
+            >
+              <Icon className="w-6 h-6" />
+            </a>
+          ))}
         </div>
       </motion.div>
     </motion.div>

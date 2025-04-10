@@ -6,7 +6,7 @@ export function Footer() {
             <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
                 {/* Company Info */}
                 <div>
-                    <h2 className="text-xl font-semibold">Vangard Translation</h2>
+                    <h2 className="text-xl font-semibold">Vangard Translations</h2>
                     <p className="mt-2 text-gray-400">
                         Professional translation and localization services across industries and languages.
                     </p>
@@ -27,9 +27,9 @@ export function Footer() {
                 {/* Contact Info */}
                 <div>
                     <h3 className="text-lg font-semibold">Contact Us</h3>
-                    <p className="mt-2 text-gray-400">Email: support@vangardtranslation.com</p>
-                    <p className="text-gray-400">Phone: +44 7400 123 456</p>
-                    <p className="text-gray-400">Location: Leeds, UK</p>
+                    <p className="mt-2 text-gray-400">Email: info@vangardtranslations.com</p>
+                    <p className="text-gray-400">Phone: +44 7777 277 507</p>
+                    <p className="text-gray-400">Location: Oakleigh Rd S, North London Business Park, N11 1GN</p>
                 </div>
             </div>
 
@@ -51,7 +51,7 @@ export function Footer() {
 
             {/* Copyright */}
             <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">
-                <p>&copy; {new Date().getFullYear()} Vangard Translation. All Rights Reserved.</p>
+                <p>&copy; {new Date().getFullYear()} Vangard Translations. All Rights Reserved.</p>
             </div>
         </footer>
     );
