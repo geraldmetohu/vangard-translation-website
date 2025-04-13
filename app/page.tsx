@@ -3,56 +3,56 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ShieldHalf, Globe, Zap, Languages } from "lucide-react";
+import dynamic from "next/dynamic";
+const HeroSection = dynamic(() => import("@/app/components/HeroSection"), {
+  ssr: false,
+});
+
 
 export default function IndexPage() {
   return (
     <div className="space-y-24 w-full bg-[#f4f4f4]">
-      {/* Hero Section */}
+      <HeroSection />
+      {/* Divider */}
+      <div className="w-full h-16 bg-gradient-to-r from-[#000957] via-[#F4CE14] to-[#000957] opacity-20" />
+
+      {/* Highlight Section (Image Right, Text Left) */}
       <motion.section
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative w-full pt-0 mt-0 px-0 py-40 md:py-56 overflow-hidden min-h-[600px]"
+        viewport={{ once: true }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-20 grid md:grid-cols-2 items-center gap-12"
       >
-        <Image
-          src="/translation.jpg"
-          alt="Translation Background"
-          fill
-          className="absolute inset-0 z-0 object-cover"
-        />
-        <div className="absolute inset-0 bg-black/40 z-10" />
-        <div className="relative z-20 text-center max-w-3xl mx-auto px-6">
-          <h1
-            className="text-4xl lg:text-5xl font-extrabold tracking-tight"
-            style={{
-              WebkitTextStroke: "2px #F4CE14",
-              WebkitTextFillColor: "#000957",
-            }}
-          >
-            Accurate. Reliable. Global.
-          </h1>
-          <p
-            className="mt-6 text-xl lg:text-2xl leading-relaxed font-medium"
-            style={{
-              WebkitTextStroke: "0.3px #fff",
-              WebkitTextFillColor: "#F4CE14",
-            }}
-          >
-            Vangard Translation delivers expert multilingual communication services tailored to meet the needs of your global audience.
+        <div>
+          <h2 className="text-4xl font-bold text-[#000957] mb-4">
+            Bridging Cultures, One Word at a Time
+          </h2>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            Whether you're targeting new markets or ensuring legal compliance, our services are crafted to help your voice be heard—clearly and accurately.
           </p>
-          <div className="mt-12 flex justify-center gap-4">
+          <div className="mt-6">
             <a
-              href="/quote"
+              href="/about"
               className="inline-block bg-[#000957] text-[#F4CE14] px-6 py-3 rounded-xl text-md font-semibold hover:bg-[#024CAA] hover:text-[#FFF455] transition"
             >
-              Request a Quote
+              Learn More About Us
             </a>
           </div>
+        </div>
+        <div className="w-full h-[300px] sm:h-[400px] relative rounded-xl overflow-hidden shadow-md">
+          <Image
+            src="/VS1.jpeg"
+            alt="About Section"
+            fill
+            className="object-cover"
+          />
         </div>
       </motion.section>
 
       {/* Divider */}
-      <div className="w-full h-16 bg-gradient-to-r from-[#000957] via-[#F4CE14] to-[#000957] opacity-20" />
+      <div className="w-full h-16 bg-gradient-to-r from-[#F4CE14] via-[#000957] to-[#F4CE14] opacity-20" />
+      
 
       <div className="px-4 sm:px-6 lg:px-12">
         {/* Services Overview */}

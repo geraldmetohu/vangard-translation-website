@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -23,14 +23,15 @@ export function NavbarLinks({
 
   const linkStyle = isMobile
     ? "block py-2 text-[#F4CE14] hover:text-[#FFF455]"
-    : "group px-3 py-2 font-medium text-sm rounded-md transition text-[#F4CE14] hover:text-[#FFF455] hover:bg-[#024CAA]/70";
+    : "group px-3 py-2 font-medium text-sm rounded-md transition text-[#F4CE14] hover:text-[#FFF455] hover:bg-[#024CAA]/60";
 
-  const dropdownContainerStyle = isMobile
-    ? "pl-4 space-y-2"
-    : "absolute bg-[#000957] mt-2 p-2 rounded shadow space-y-2 z-50";
+  const dropdownBaseStyle = isMobile
+    ? "pl-4 flex flex-col space-y-2"
+    : "absolute mt-2 bg-[#000957] p-3 rounded shadow z-40 flex flex-col space-y-2";
 
   return (
     <div className={`${isMobile ? "space-y-2" : "hidden md:flex items-center gap-x-4 ml-8"}`}>
+      {/* Top-Level Links */}
       {[
         { name: "Home", href: "/" },
         { name: "About Us", href: "/about" },
@@ -47,15 +48,29 @@ export function NavbarLinks({
       ))}
 
       {/* Services */}
-      <div className="relative">
+      <div
+        className="relative"
+        onMouseEnter={() => {
+          if (!isMobile) {
+            setServicesOpen(true);
+            setIndustriesOpen(false);
+          }
+        }}
+        onMouseLeave={() => {
+          if (!isMobile) setTimeout(() => setServicesOpen(false), 600); // 300ms delay
+        }}
+        
+      >
         <button
-          onClick={() => setServicesOpen(!servicesOpen)}
+          onClick={() => {
+            if (isMobile) setServicesOpen(!servicesOpen);
+          }}
           className={`${linkStyle} flex items-center gap-1 w-full`}
         >
           Services {servicesOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         </button>
         {servicesOpen && (
-          <div className={dropdownContainerStyle}>
+          <div className={dropdownBaseStyle}>
             {[
               { name: "Translating", href: "/services/translating" },
               { name: "Interpreting", href: "/services/interpreting" },
@@ -76,15 +91,28 @@ export function NavbarLinks({
       </div>
 
       {/* Industries */}
-      <div className="relative">
+      <div
+        className="relative"
+        onMouseEnter={() => {
+          if (!isMobile) {
+            setIndustriesOpen(true);
+            setServicesOpen(false);
+          }
+        }}
+        onMouseLeave={() => {
+          if (!isMobile) setTimeout(() => setIndustriesOpen(false), 300); // 300ms delay
+        }}        
+      >
         <button
-          onClick={() => setIndustriesOpen(!industriesOpen)}
+          onClick={() => {
+            if (isMobile) setIndustriesOpen(!industriesOpen);
+          }}
           className={`${linkStyle} flex items-center gap-1 w-full`}
         >
           Industries {industriesOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         </button>
         {industriesOpen && (
-          <div className={dropdownContainerStyle}>
+          <div className={dropdownBaseStyle}>
             {[
               { name: "Medical", href: "/industries/medical" },
               { name: "Law", href: "/industries/law" },

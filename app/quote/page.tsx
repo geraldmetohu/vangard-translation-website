@@ -32,7 +32,7 @@ export default function QuotePage() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto py-20 px-6">
+    <div className="max-w-2xl mx-auto py-36 px-6">
       <h1 className="text-4xl font-bold text-center mb-10 text-[#0D47A1]">
         Request a Quote
       </h1>
