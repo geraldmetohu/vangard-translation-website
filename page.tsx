@@ -41,7 +41,7 @@ export default function IndexPage() {
               WebkitTextFillColor: "#ebbe08",
             }}
           >
-            Vangard Translation delivers expert multilingual communication services tailored to meet the needs of your global audience.
+            Vangard Translations delivers expert multilingual communication services tailored to meet the needs of your global audience.
           </p>
 
           <div className="mt-12 flex justify-center gap-4">
