@@ -47,7 +47,7 @@ export function NavbarLinks({
         </Link>
       ))}
 
-      {/* Services */}
+        {/* Services */}
       <div
         className="relative"
         onMouseEnter={() => {
@@ -57,37 +57,36 @@ export function NavbarLinks({
           }
         }}
         onMouseLeave={() => {
-          if (!isMobile) setTimeout(() => setServicesOpen(false), 600); // 300ms delay
+          if (!isMobile) setServicesOpen(false);
         }}
-        
       >
         <button
-          onClick={() => {
-            if (isMobile) setServicesOpen(!servicesOpen);
-          }}
+          onClick={() => isMobile && setServicesOpen(!servicesOpen)}
           className={`${linkStyle} flex items-center gap-1 w-full`}
         >
           Services {servicesOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         </button>
-        {servicesOpen && (
-          <div className={dropdownBaseStyle}>
-            {[
-              { name: "Translating", href: "/services/translating" },
-              { name: "Interpreting", href: "/services/interpreting" },
-              { name: "Proofreading", href: "/services/proofreading" },
-              { name: "Transcription", href: "/services/transcription" },
-            ].map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={() => handleClick(() => setServicesOpen(false))}
-                className={linkStyle}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-        )}
+        <div
+          className={`${servicesOpen ? "block" : "hidden"} ${dropdownBaseStyle}`}
+          onMouseEnter={() => !isMobile && setServicesOpen(true)}
+          onMouseLeave={() => !isMobile && setServicesOpen(false)}
+        >
+          {[
+            { name: "Translating", href: "/services/translating" },
+            { name: "Interpreting", href: "/services/interpreting" },
+            { name: "Proofreading", href: "/services/proofreading" },
+            { name: "Transcription", href: "/services/transcription" },
+          ].map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              onClick={() => handleClick(() => setServicesOpen(false))}
+              className={linkStyle}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
       </div>
 
       {/* Industries */}
@@ -100,39 +99,39 @@ export function NavbarLinks({
           }
         }}
         onMouseLeave={() => {
-          if (!isMobile) setTimeout(() => setIndustriesOpen(false), 300); // 300ms delay
-        }}        
+          if (!isMobile) setIndustriesOpen(false);
+        }}
       >
         <button
-          onClick={() => {
-            if (isMobile) setIndustriesOpen(!industriesOpen);
-          }}
+          onClick={() => isMobile && setIndustriesOpen(!industriesOpen)}
           className={`${linkStyle} flex items-center gap-1 w-full`}
         >
           Industries {industriesOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         </button>
-        {industriesOpen && (
-          <div className={dropdownBaseStyle}>
-            {[
-              { name: "Medical", href: "/industries/medical" },
-              { name: "Law", href: "/industries/law" },
-              { name: "Financial", href: "/industries/financial" },
-              { name: "Manufacturing & Engineering", href: "/industries/manufacturing" },
-              { name: "Retail", href: "/industries/retail" },
-              { name: "Media", href: "/industries/media" },
-              { name: "Travel & Tourism", href: "/industries/travel" },
-            ].map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={() => handleClick(() => setIndustriesOpen(false))}
-                className={linkStyle}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-        )}
+        <div
+          className={`${industriesOpen ? "block" : "hidden"} ${dropdownBaseStyle}`}
+          onMouseEnter={() => !isMobile && setIndustriesOpen(true)}
+          onMouseLeave={() => !isMobile && setIndustriesOpen(false)}
+        >
+          {[
+            { name: "Medical", href: "/industries/medical" },
+            { name: "Law", href: "/industries/law" },
+            { name: "Financial", href: "/industries/financial" },
+            { name: "Manufacturing & Engineering", href: "/industries/manufacturing" },
+            { name: "Retail", href: "/industries/retail" },
+            { name: "Media", href: "/industries/media" },
+            { name: "Travel & Tourism", href: "/industries/travel" },
+          ].map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              onClick={() => handleClick(() => setIndustriesOpen(false))}
+              className={linkStyle}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

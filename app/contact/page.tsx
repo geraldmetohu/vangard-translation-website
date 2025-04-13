@@ -32,20 +32,26 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("loading");
-
+  
     try {
       const res = await fetch("/api/send-contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
+  
       const data = await res.json();
-      setStatus(data.success ? "success" : "error");
+      if (data.success) {
+        setFormData({ name: "", email: "", phone: "", message: "" }); // ✅ Clear fields
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }
   };
+  
 
   return (
     <motion.div

@@ -4,22 +4,23 @@ export default function AboutUs() {
   return (
     <div className="w-full text-[#000957] bg-[#f9f9f9]">
       {/* Hero Section */}
-      <div className="relative w-full h-[60vh] lg:h-[80vh] flex items-center justify-center text-center bg-[#000957] text-[#F4CE14] overflow-hidden pt-24">
-        <Image
-          src="/about-banner.jpg"
-          alt="About Us Banner"
-          fill
-          className="absolute inset-0 object-cover opacity-60"
-        />
-        <div className="relative z-10 px-4">
-          <h1 className="text-3xl lg:text-5xl font-extrabold tracking-tight">
-            About Us
-          </h1>
-          <p className="mt-4 text-lg lg:text-xl font-medium text-[#FFF455]">
-            Language Interpretation Services for Every Industry
-          </p>
-        </div>
-      </div>
+      <div className="relative w-full py-24 lg:py-32 flex flex-col items-center justify-center text-center bg-[#000000] text-[#F4CE14] px-4">
+  <Image
+    src="/logo_v.jpg"
+    alt="Vangard Logo"
+    width={256}
+    height={256}
+    className="mb-6"
+    priority
+  />
+  <h1 className="text-3xl lg:text-5xl font-extrabold tracking-tight">
+    About Us
+  </h1>
+  <p className="mt-4 text-lg lg:text-xl font-medium text-[#FFF455] max-w-2xl">
+    Language Interpretation Services for Every Industry
+  </p>
+</div>
+
 
       {/* Main content area */}
       <div className="max-w-7xl mx-auto px-6 py-16">
