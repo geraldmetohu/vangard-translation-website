@@ -25,7 +25,7 @@ export default function HeroSection() {
             Accurate. Reliable. Global.
           </h1>
           <p className="mt-8 text-lg md:text-xl lg:text-2xl font-normal text-[#f2e9d0] leading-relaxed">
-            Vangard Translation delivers expert multilingual communication services tailored to meet the needs of your global audience.
+            Vangard Translations delivers expert multilingual communication services tailored to meet the needs of your global audience.
           </p>
           <div className="mt-10">
             <a
