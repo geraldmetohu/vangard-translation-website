@@ -16,10 +16,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Vangard Translations",
-  description: "Professional translation and localization services.",
+  description: "Professional Language Services",
+  icons: {
+    icon: "/logo_v.png", // or "/favicon.png"
+  },
 };
+
 
 export default function RootLayout({
   children,
